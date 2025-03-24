@@ -1,0 +1,58 @@
+public function outstock(Request $request){
+        $title = "Expired Products";
+        if($request->ajax()){
+            $products = Product::whereHas('expiry_date', '<=', Carbon::now())->get();
+            return DataTables::of($products)
+                ->addColumn('product',function($product){
+                    $image = '';
+                    if(!empty($product->purchase)){
+                        $image = null;
+                        if(!empty($product->purchase->image)){
+                            $image = '<span class="avatar avatar-sm mr-2">
+                            <img class="avatar-img" src="'.asset("storage/purchases/".$product->purchase->image).'" alt="image">
+                            </span>';
+                        }
+                        return $product->purchase->product. ' ' . $image;
+                    }
+                })
+               
+                ->addColumn('category',function($product){
+                    $category = null;
+                    if(!empty($product->purchase->category)){
+                        $category = $product->purchase->category->name;
+                    }
+                    return $category;
+                })
+                ->addColumn('price',function($product){
+                    return settings('app_currency','$').' '. $product->price;
+                })
+                ->addColumn('quantity',function($product){
+                    if(!empty($product->purchase)){
+                        return $product->purchase->quantity;
+                    }
+                })
+                ->addColumn('expiry_date',function($product){
+                    if(!empty($product->purchase)){
+                        return date_format(date_create($product->purchase->expiry_date),'d M, Y');
+                    }
+                })
+                ->addColumn('action', function ($row) {
+                    $editbtn = '<a href="'.route("products.edit", $row->id).'" class="editbtn"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
+                    $deletebtn = '<a data-id="'.$row->id.'" data-route="'.route('products.destroy', $row->id).'" href="javascript:void(0)" id="deletebtn"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a>';
+                    if (!auth()->user()->hasPermissionTo('edit-product')) {
+                        $editbtn = '';
+                    }
+                    if (!auth()->user()->hasPermissionTo('destroy-purchase')) {
+                        $deletebtn = '';
+                    }
+                    $btn = $editbtn.' '.$deletebtn;
+                    return $btn;
+                })
+                ->rawColumns(['product','action'])
+                ->make(true);
+        }
+        $product = Purchase::where('quantity', '<=', 0)->first();
+        return view('admin.products.outstock',compact(
+            'title',
+        ));
+    }

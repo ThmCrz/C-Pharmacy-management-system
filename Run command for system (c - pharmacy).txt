@@ -1,0 +1,5 @@
+cd C:\xampp\htdocs\C-Pharmacy-management-system-main-main-1
+
+npm run dev
+
+php artisan serve

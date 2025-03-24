@@ -1,0 +1,13 @@
+0. install node.js
+1. install composer on computer https://getcomposer.org/
+2. install laravel on root folder (folder of c-pharmacy) "composer global require laravel/installer"
+3. run mySQL in Xampp -> create new database -> c pharmacy
+
+
+cd C:\xampp\htdocs\C-Pharmacy-management-system-main-main
+npm install 
+npm run dev
+
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
