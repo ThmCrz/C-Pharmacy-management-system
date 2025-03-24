@@ -3,7 +3,7 @@
  * 2016 SpryMedia Ltd - datatables.net/license
  *
  * FileSaver.js (1.3.3) - MIT license
- * Copyright © 2016 Eli Grey - http://eligrey.com
+ * Copyright © 2016 Eli Grey - https://eligrey.com
  */
 
 (function( factory ){
@@ -81,7 +81,7 @@ var _saveAs = (function(view) {
 		, get_URL = function() {
 			return view.URL || view.webkitURL || view;
 		}
-		, save_link = doc.createElementNS("http://www.w3.org/1999/xhtml", "a")
+		, save_link = doc.createElementNS("https://www.w3.org/1999/xhtml", "a")
 		, can_use_save_link = "download" in save_link
 		, click = function(node) {
 			var event = new MouseEvent("click");
@@ -536,20 +536,20 @@ function _excelColWidth( data, col ) {
 var excelStrings = {
 	"_rels/.rels":
 		'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
-		'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+
-			'<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>'+
+		'<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">'+
+			'<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>'+
 		'</Relationships>',
 
 	"xl/_rels/workbook.xml.rels":
 		'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
-		'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+
-			'<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>'+
-			'<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'+
+		'<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">'+
+			'<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>'+
+			'<Relationship Id="rId2" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'+
 		'</Relationships>',
 
 	"[Content_Types].xml":
 		'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
-		'<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'+
+		'<Types xmlns="https://schemas.openxmlformats.org/package/2006/content-types">'+
 			'<Default Extension="xml" ContentType="application/xml" />'+
 			'<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />'+
 			'<Default Extension="jpeg" ContentType="image/jpeg" />'+
@@ -560,7 +560,7 @@ var excelStrings = {
 
 	"xl/workbook.xml":
 		'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
-		'<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">'+
+		'<workbook xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">'+
 			'<fileVersion appName="xl" lastEdited="5" lowestEdited="5" rupBuild="24816"/>'+
 			'<workbookPr showInkAnnotation="0" autoCompressPictures="0"/>'+
 			'<bookViews>'+
@@ -574,14 +574,14 @@ var excelStrings = {
 
 	"xl/worksheets/sheet1.xml":
 		'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+
-		'<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">'+
+		'<worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">'+
 			'<sheetData/>'+
 			'<mergeCells count="0"/>'+
 		'</worksheet>',
 
 	"xl/styles.xml":
 		'<?xml version="1.0" encoding="UTF-8"?>'+
-		'<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">'+
+		'<styleSheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="https://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="https://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">'+
 			'<numFmts count="6">'+
 				'<numFmt numFmtId="164" formatCode="#,##0.00_-\ [$$-45C]"/>'+
 				'<numFmt numFmtId="165" formatCode="&quot;£&quot;#,##0.00"/>'+
@@ -1301,7 +1301,7 @@ DataTable.ext.buttons.excelHtml5 = {
 };
 
 //
-// PDF export - using pdfMake - http://pdfmake.org
+// PDF export - using pdfMake - https://pdfmake.org
 //
 DataTable.ext.buttons.pdfHtml5 = {
 	className: 'buttons-pdf buttons-html5',

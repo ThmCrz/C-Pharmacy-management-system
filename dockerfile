@@ -47,8 +47,11 @@ RUN php artisan storage:link
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/public
 
-# Copy Nginx configuration and enable site
+# Copy Nginx configuration
 COPY ./nginx/default.conf /etc/nginx/sites-available/default
+
+# Ensure the symbolic link exists only if it doesn't already exist
+RUN [ ! -f /etc/nginx/sites-enabled/default ] || rm /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # Expose ports for Nginx and PHP-FPM

@@ -74,7 +74,7 @@ php artisan serve
 
 11. Open the address in the terminal in your browser.Usually address is usually like this:
 ```
-http://127.0.0.1:8000
+https://127.0.0.1:8000
 ```
 12. Enjoy and make sure to star the repo :).Report bugs,features and also send your pull requests.
 
