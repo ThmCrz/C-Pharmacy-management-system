@@ -8,13 +8,13 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{!empty(AppSettings::get('favicon')) ? asset('storage/'.AppSettings::get('favicon')) : asset('assets/img/favicon.png')}}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/bootstrap.min.css')}}">
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/style.css')}}">
     <!-- Page CSS -->
     @stack('page-css')
     <!--[if lt IE 9]>

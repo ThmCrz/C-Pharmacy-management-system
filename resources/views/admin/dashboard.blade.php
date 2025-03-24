@@ -3,7 +3,7 @@
 <x-assets.datatables />
 
 @push('page-css')
-    <link rel="stylesheet" href="{{asset('assets/plugins/chart.js/Chart.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/chart.js/Chart.min.css')}}">
 @endpush
 
 @push('page-header')

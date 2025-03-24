@@ -2,7 +2,7 @@
 
 @push('page-css')
 	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.min.css')}}">
+	<link rel="stylesheet" href="{{ secure_asset('assets/css/bootstrap-datetimepicker.min.css')}}">
 @endpush
 
 @push('page-header')

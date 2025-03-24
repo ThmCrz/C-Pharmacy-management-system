@@ -10,23 +10,23 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{!empty(AppSettings::get('favicon')) ? asset('storage/'.AppSettings::get('favicon')) : asset('assets/img/favicon.png')}}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/bootstrap.min.css')}}">
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
     <!-- Feathericon CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/feathericon.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/feathericon.min.css')}}">
 
-    <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/icons.min.css')}}">
     <!-- Snackbar CSS -->
-	<link rel="stylesheet" href="{{asset('assets/plugins/snackbar/snackbar.min.css')}}">
+	<link rel="stylesheet" href="{{ secure_asset('assets/plugins/snackbar/snackbar.min.css')}}">
     <!-- Sweet Alert css -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/sweetalert2/sweetalert2.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/sweetalert2/sweetalert2.min.css')}}">
     <!-- Snackbar Css -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/snackbar/snackbar.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/snackbar/snackbar.min.css')}}">
     <!-- Select2 Css -->
-    <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/plugins/select2/css/select2.min.css')}}">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/style.css')}}">
     <!-- Page CSS -->
     @stack('page-css')
     <!--[if lt IE 9]>
